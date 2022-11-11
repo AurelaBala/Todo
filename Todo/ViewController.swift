@@ -7,9 +7,10 @@
 
 import UIKit
 
+
 class ViewController: UIViewController {
     
-    let todotasks =
+    var todotasks =
     [
     TodoList(title: "Task 1", due_date: "25 Nov"),
     TodoList(title: "Task 2", due_date: "Overdue"),
@@ -22,9 +23,9 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         addTaskButton.layer.shadowColor = UIColor.white.cgColor
-        addTaskButton.layer.shadowOffset = CGSize(width: 2, height: 2)
+        addTaskButton.layer.shadowOffset = CGSize(width: 1, height: 1)
             addTaskButton.layer.shadowRadius = 5
-            addTaskButton.layer.shadowOpacity = 1.0
+        addTaskButton.layer.shadowOpacity = 0.8
         
         self.tableView.layer.cornerRadius = 10.0
         // Do any additional setup after loading the view.
@@ -36,27 +37,46 @@ class ViewController: UIViewController {
 extension ViewController: UITableViewDataSource
 {
 
-//    func numberOfSections(in tableView: UITableView) -> Int {
-//        return 2    }
+    
   
-  func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+  func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int
+    {
       return todotasks.count
-  }
-  
+    }
+    
+    
   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell
     {
         //method for tableView to create the cell table for us
         let cell = tableView.dequeueReusableCell(withIdentifier: "checked cell", for: indexPath) as! MarkAsDoneTableViewCell
-        
+        cell.delegate = self
         let task = todotasks[indexPath.row]
-        //let cell = MarkAsDoneTableViewCell()
-        let title = task.title
-        let due_date = task.due_date
-        //cell.textLabel!.numberOfLines = 0
-        //cell.textLabel?.text = title + "\n" + due_date
-        cell.set(title: title, due_date: due_date, isCompleted: task.isCompleted)
+       
+       
+       cell.set(title: task.title, due_date: task.due_date, isCompleted: task.isCompleted)
+       
+       
+        print (task.isCompleted)
         return cell
+        
     }
   
+}
+
+//conform to the protocol and implement the method
+//find the taks that is associated with this cell and change the switch state based on users input
+extension ViewController: MarkAsDoneTableViewCellDelegate {
+    func markAsDoneTableViewCell(_ cell: MarkAsDoneTableViewCell, switchStatus isOn: Bool) {
+        guard let indexPath = tableView.indexPath(for: cell) else {
+            return
+        }
+        let task = todotasks[indexPath.row]
+        let newTask = TodoList(title: task.title, due_date: task.due_date, isCompleted: isOn)
+        
+        //add the new task to the array
+        todotasks[indexPath.row] = newTask
+    }
+    
+    
 }
 

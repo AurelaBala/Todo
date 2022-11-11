@@ -12,5 +12,11 @@ struct TodoList
     let title: String
     let due_date: String
     //let description: String
-    let isCompleted: Bool = false
+    let isCompleted: Bool
+    
+    init(title: String, due_date: String, isCompleted: Bool = false) {
+        self.title = title
+        self.due_date = due_date
+        self.isCompleted = isCompleted
+    }
 }
