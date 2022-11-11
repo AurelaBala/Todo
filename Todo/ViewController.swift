@@ -12,10 +12,10 @@ class ViewController: UIViewController {
     
     var todotasks =
     [
-    TodoList(title: "Task 1", due_date: "25 Nov"),
-    TodoList(title: "Task 2", due_date: "Overdue"),
-    TodoList(title: "Task 3", due_date: "1 Dec"),
-    TodoList(title: "Task 4", due_date: "25 Nov")
+    TodoList(title: "Task 1", due_date: "25 November 2022"),
+    TodoList(title: "Task 2", due_date: "30 November 2022"),
+    TodoList(title: "Task 3", due_date: "1 December 2022"),
+    TodoList(title: "Task 4", due_date: "25 November 2022")
     ]
 
     @IBOutlet weak var tableView: UITableView!

@@ -32,11 +32,11 @@ class MarkAsDoneTableViewCell: UITableViewCell {
         delegate?.markAsDoneTableViewCell(self, switchStatus: taskSwitch.isOn)
         if(taskSwitch.isOn)
         {
-            taskDueDate.textColor =  UIColor.systemOrange
+            taskDueDate.textColor =  UIColor(hue: 0.49, saturation: 0.41, brightness: 0.65, alpha: 1)
         }
         else
         {
-            taskDueDate.textColor = UIColor.red
+            taskDueDate.textColor = UIColor(hue: 358, saturation: 0.62, brightness: 0.48, alpha: 1)
         }
         
     }
