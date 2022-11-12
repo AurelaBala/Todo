@@ -30,7 +30,11 @@ class ViewController: UIViewController {
         self.tableView.layer.cornerRadius = 10.0
         // Do any additional setup after loading the view.
     }
-
+    
+    
+    @IBAction func goBack(segue: UIStoryboardSegue) {
+        
+    }
 
 }
 
@@ -38,12 +42,10 @@ extension ViewController: UITableViewDataSource
 {
 
     
-  
   func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int
     {
       return todotasks.count
     }
-    
     
   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell
     {
@@ -52,9 +54,7 @@ extension ViewController: UITableViewDataSource
         cell.delegate = self
         let task = todotasks[indexPath.row]
        
-       
        cell.set(title: task.title, due_date: task.due_date, isCompleted: task.isCompleted)
-       
        
         print (task.isCompleted)
         return cell
