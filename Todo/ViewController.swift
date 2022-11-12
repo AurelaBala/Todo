@@ -20,6 +20,7 @@ class ViewController: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var addTaskButton: UIButton!
+    @IBOutlet weak var tableViewLandscape: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
         addTaskButton.layer.shadowColor = UIColor.white.cgColor
@@ -31,8 +32,9 @@ class ViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
-    
-    @IBAction func goBack(segue: UIStoryboardSegue) {
+    //unwind segue
+    @IBAction func goBack(segue: UIStoryboardSegue)
+    {
         
     }
 
@@ -41,26 +43,28 @@ class ViewController: UIViewController {
 extension ViewController: UITableViewDataSource
 {
 
-    
   func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int
     {
       return todotasks.count
     }
+
     
   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell
     {
-        //method for tableView to create the cell table for us
-        let cell = tableView.dequeueReusableCell(withIdentifier: "checked cell", for: indexPath) as! MarkAsDoneTableViewCell
-        cell.delegate = self
-        let task = todotasks[indexPath.row]
-       
-       cell.set(title: task.title, due_date: task.due_date, isCompleted: task.isCompleted)
-       
-        print (task.isCompleted)
-        return cell
         
+        //method for tableView to create the cell table for us
+      
+             let cell = tableView.dequeueReusableCell(withIdentifier: "checked cell", for: indexPath) as! MarkAsDoneTableViewCell
+            cell.delegate = self
+            let task = todotasks[indexPath.row]
+            cell.set(title: task.title, due_date: task.due_date, isCompleted: task.isCompleted)
+            
+        
+        return cell
     }
-  
+    
+
+    
 }
 
 //conform to the protocol and implement the method
@@ -79,4 +83,10 @@ extension ViewController: MarkAsDoneTableViewCellDelegate {
     
     
 }
+
+
+
+
+
+
 

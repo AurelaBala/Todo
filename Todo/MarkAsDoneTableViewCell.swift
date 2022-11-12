@@ -17,10 +17,9 @@ class MarkAsDoneTableViewCell: UITableViewCell {
     
     
     @IBOutlet weak var taskLabel: UILabel!
-    
     @IBOutlet weak var taskDueDate: UILabel!
-    
     @IBOutlet weak var taskSwitch: UISwitch!
+    
     
     
     weak var delegate: MarkAsDoneTableViewCellDelegate?
@@ -32,11 +31,15 @@ class MarkAsDoneTableViewCell: UITableViewCell {
         delegate?.markAsDoneTableViewCell(self, switchStatus: taskSwitch.isOn)
         if(taskSwitch.isOn)
         {
+            
             taskDueDate.textColor =  UIColor(hue: 0.49, saturation: 0.41, brightness: 0.65, alpha: 1)
+            
         }
         else
         {
             taskDueDate.textColor = UIColor(hue: 358, saturation: 0.62, brightness: 0.48, alpha: 1)
+           
+            
         }
         
     }
@@ -47,6 +50,8 @@ class MarkAsDoneTableViewCell: UITableViewCell {
         taskLabel.text = title
         taskDueDate.text = due_date
         taskSwitch.isOn = isCompleted
+       
+        
         updateCompleted()
     
     }
@@ -67,6 +72,7 @@ class MarkAsDoneTableViewCell: UITableViewCell {
            
         }
         taskLabel.attributedText = attributedString
+      
         
         
         
