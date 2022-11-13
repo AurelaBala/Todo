@@ -2,19 +2,29 @@
 //  TodoStruct.swift
 //  Todo
 //
-//  Created by Aurela Bala on 2022-11-10.
-// Store the data about each to do item
+/* Created and Developed by
+Adriana Diaz Torres - 301157161
+Aurela Bala - 301279255
+Date Created: 09/11/2022
+Simple To Do List App. This version performs only the User Interface of the APP.
+
+The To Do struct stores the data about each to do item
+Version: 1.1.0
+*/
+
 
 import Foundation
 
+//ToDoList struct
 struct TodoList
 {
     let title: String
     let due_date: String
-    //let description: String
     let isCompleted: Bool
     
-    init(title: String, due_date: String, isCompleted: Bool = false) {
+    //replace the constant struct todo value with the new todo
+    init(title: String, due_date: String, isCompleted: Bool = false)
+    {
         self.title = title
         self.due_date = due_date
         self.isCompleted = isCompleted

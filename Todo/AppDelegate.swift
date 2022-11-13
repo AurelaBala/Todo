@@ -2,8 +2,12 @@
 //  AppDelegate.swift
 //  Todo
 //
-//  Created by Aurela Bala on 2022-11-09.
-//
+/* Created and Developed by
+Adriana Diaz Torres - 301157161
+Aurela Bala - 301279255
+Date Created: 09/11/2022
+Simple To Do List App. This version performs only the User Interface of the APP.
+*/
 
 import UIKit
 

@@ -2,8 +2,17 @@
 //  EditTaskViewController.swift
 //  Todo
 //
-//  Created by Aurela Bala on 2022-11-10.
-//
+/* Created and Developed by
+Adriana Diaz Torres - 301157161
+Aurela Bala - 301279255
+Date Created: 09/11/2022
+Simple To Do List App. This version performs only the User Interface of the APP.
+
+The EditTaskViewController is the Edit Task Details screen that includes all the task details ( title, description, due date, switch controller and buttons to edit, delete and cancel the actions).
+Screen performs in both modes: portrait and landscape
+Version: 1.1.0
+*/
+
 
 import UIKit
 import SwiftUI
@@ -12,19 +21,16 @@ class EditTaskViewController: UIViewController {
 
    
     @IBOutlet weak var editView: UIView!
-    
     @IBOutlet weak var editTitle: UITextField!
     @IBOutlet weak var taskDescription: UITextView!
-    
     @IBOutlet weak var editTaskView: UIView!
     @IBOutlet weak var editTitleLandscape: UITextField!
     @IBOutlet weak var taskDescriptionLandscape: UITextView!
     
-    override func viewDidLoad() {
-        
+    override func viewDidLoad()
+    {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        //custom design for the portrair mode elements
         self.editView.layer.cornerRadius = 10.0
         editTaskView.layer.cornerRadius = 10.0
         editTitle.layer.cornerRadius = 10
@@ -33,7 +39,7 @@ class EditTaskViewController: UIViewController {
         taskDescription.layer.borderWidth = 1
         editTitle.layer.borderColor = UIColor(hue: 0.65, saturation: 0.57, brightness: 0.92, alpha: 1).cgColor
         taskDescription.layer.borderColor = UIColor(hue: 0.65, saturation: 0.57, brightness: 0.92, alpha: 1).cgColor
-        
+        //custom design for the landscape mode elements
         editTitleLandscape.layer.cornerRadius = 10
         taskDescriptionLandscape.layer.cornerRadius = 10
         editTitleLandscape.layer.borderWidth = 1
@@ -41,9 +47,4 @@ class EditTaskViewController: UIViewController {
         editTitleLandscape.layer.borderColor = UIColor(hue: 0.65, saturation: 0.57, brightness: 0.92, alpha: 1).cgColor
         taskDescriptionLandscape.layer.borderColor = UIColor(hue: 0.65, saturation: 0.57, brightness: 0.92, alpha: 1).cgColor
     }
-    
-    
-    
-
-
 }
