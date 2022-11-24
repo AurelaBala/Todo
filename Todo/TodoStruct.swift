@@ -16,17 +16,19 @@ Version: 1.1.0
 import Foundation
 
 //ToDoList struct
-struct TodoList
+struct TodoList : Codable
 {
     let title: String
     let due_date: String
     let isCompleted: Bool
+    let description: String
     
     //replace the constant struct todo value with the new todo
-    init(title: String, due_date: String, isCompleted: Bool = false)
+    init(title: String, due_date: String, isCompleted: Bool = false, description: String)
     {
         self.title = title
         self.due_date = due_date
         self.isCompleted = isCompleted
+        self.description = description
     }
 }

@@ -26,10 +26,14 @@ class EditTaskViewController: UIViewController {
     @IBOutlet weak var editTaskView: UIView!
     @IBOutlet weak var editTitleLandscape: UITextField!
     @IBOutlet weak var taskDescriptionLandscape: UITextView!
-    
+    var task: TodoList?
     override func viewDidLoad()
     {
         super.viewDidLoad()
+        
+        editTitle.text = task?.title
+        taskDescription.text = task?.description
+        
         //custom design for the portrair mode elements
         self.editView.layer.cornerRadius = 10.0
         editTaskView.layer.cornerRadius = 10.0

@@ -26,26 +26,26 @@
                                 <color key="sectionIndexTrackingBackgroundColor" red="0.55294120309999995" green="0.27450981740000002" blue="0.094117648900000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="checked cell" id="K0A-vo-T33" customClass="MarkAsDoneTableViewCell" customModule="Todo" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="50" width="393" height="42.666667938232422"/>
+                                        <rect key="frame" x="0.0" y="50" width="393" height="43.333332061767578"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="K0A-vo-T33" id="Rzj-WA-s3D">
-                                            <rect key="frame" x="0.0" y="0.0" width="393" height="42.666667938232422"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="393" height="43.333332061767578"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Task 1" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dTm-eh-HtO">
-                                                    <rect key="frame" x="22" y="5.6666666666666661" width="260" height="20.333333333333336"/>
+                                                    <rect key="frame" x="22" y="5.9999999999999982" width="260" height="20.333333333333329"/>
                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                                     <color key="textColor" red="0.30980392156862746" green="0.25490196078431371" blue="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Overdue" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="966-12-uOD">
-                                                    <rect key="frame" x="22.000000000000004" y="25.333333333333332" width="48.333333333333343" height="14.333333333333332"/>
+                                                    <rect key="frame" x="22.000000000000004" y="25.999999999999996" width="48.333333333333343" height="14.333333333333332"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                     <color key="textColor" red="0.49019607843137253" green="0.18823529411764706" blue="0.19607843137254902" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="00Y-gv-zKa">
-                                                    <rect key="frame" x="331" y="4" width="42" height="34.666666666666664"/>
+                                                    <rect key="frame" x="331" y="4" width="42" height="35.333333333333336"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="42" id="NUI-ds-cof"/>
                                                     </constraints>
@@ -55,11 +55,12 @@
                                                         <imageReference key="image" image="square.and.pencil" catalog="system" symbolScale="large"/>
                                                     </buttonConfiguration>
                                                     <connections>
-                                                        <segue destination="qJS-Ds-FSI" kind="show" id="fAw-Jp-5Je"/>
+                                                        <action selector="editTaskBttn:" destination="BYZ-38-t0r" eventType="touchUpInside" id="cQy-S0-Okh"/>
+                                                        <segue destination="qJS-Ds-FSI" kind="show" identifier="edit" destinationCreationSelector="test2:" id="fAw-Jp-5Je"/>
                                                     </connections>
                                                 </button>
                                                 <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" preferredStyle="sliding" translatesAutoresizingMaskIntoConstraints="NO" id="WJH-cN-Ri0">
-                                                    <rect key="frame" x="282" y="5.6666666666666661" width="51" height="31.333333333333336"/>
+                                                    <rect key="frame" x="282" y="5.9999999999999982" width="51" height="31.333333333333329"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="49" id="9qO-w6-jcK"/>
                                                         <constraint firstAttribute="height" constant="31.329999999999998" id="pJ5-5q-9SN"/>
@@ -88,6 +89,7 @@
                                             <outlet property="taskDueDate" destination="966-12-uOD" id="H5T-Ax-2b9"/>
                                             <outlet property="taskLabel" destination="dTm-eh-HtO" id="sh6-L9-Sre"/>
                                             <outlet property="taskSwitch" destination="WJH-cN-Ri0" id="XtO-WD-7Tg"/>
+                                            <segue destination="qJS-Ds-FSI" kind="show" destinationCreationSelector="test:" id="nwO-Os-Jef"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -109,6 +111,9 @@
                                     </backgroundConfiguration>
                                     <color key="baseForegroundColor" red="0.31764706970000001" green="0.35686278339999999" blue="0.73725497719999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 </buttonConfiguration>
+                                <connections>
+                                    <segue destination="CCS-WT-yWI" kind="show" id="wwZ-yS-Tlm"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Todo list | All tasks" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="E3h-Q7-Fwt">
                                 <rect key="frame" x="15.999999999999986" y="117.00000000000001" width="237.66666666666663" height="32.666666666666671"/>
@@ -145,7 +150,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-771" y="-318"/>
+            <point key="canvasLocation" x="-1031" y="-318"/>
         </scene>
         <!--Edit Task View Controller-->
         <scene sceneID="3Mt-c9-G1z">
@@ -198,7 +203,7 @@
                                         <rect key="frame" x="29" y="344" width="162" height="43"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     </datePicker>
-                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Task 1" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zXf-cB-7a2">
+                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zXf-cB-7a2">
                                         <rect key="frame" x="25" y="89" width="348" height="47"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -394,7 +399,46 @@
             </objects>
             <point key="canvasLocation" x="-120.42253521126761" y="-319.84732824427482"/>
         </scene>
+        <!--Task View Controller-->
+        <scene sceneID="AHF-wZ-09C">
+            <objects>
+                <viewController id="CCS-WT-yWI" customClass="TaskViewController" customModule="Todo" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Yuz-vh-PUy">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="783"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="AtH-WX-7Jw">
+                                <rect key="frame" x="16" y="132" width="361" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rc8-94-1bN">
+                                <rect key="frame" x="309" y="80" width="61" height="35"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Save"/>
+                                <connections>
+                                    <action selector="addTask:" destination="CCS-WT-yWI" eventType="touchUpInside" id="2ie-Gg-env"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="Fb7-QB-cWF"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="m3b-2u-jhE"/>
+                    <connections>
+                        <outlet property="newTastName" destination="AtH-WX-7Jw" id="wdP-dI-X8z"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="QpW-CU-o4u" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="539.69465648854964" y="-318.3098591549296"/>
+        </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="fAw-Jp-5Je"/>
+    </inferredMetricsTieBreakers>
     <resources>
         <image name="checkmark.circle.fill" catalog="system" width="128" height="123"/>
         <image name="plus" catalog="system" width="128" height="113"/>
