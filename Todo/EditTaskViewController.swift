@@ -17,6 +17,10 @@ Version: 1.1.0
 import UIKit
 import SwiftUI
 
+//protocol EditTaskViewControllerDelegate: AnyObject {
+//    func EditTaskViewController (_ vc: EditTaskViewController, saveTask task: TodoList)
+//}
+
 class EditTaskViewController: UIViewController {
 
    
@@ -26,7 +30,11 @@ class EditTaskViewController: UIViewController {
     @IBOutlet weak var editTaskView: UIView!
     @IBOutlet weak var editTitleLandscape: UITextField!
     @IBOutlet weak var taskDescriptionLandscape: UITextView!
+    
     var task: TodoList?
+    //var task2 = ""
+    
+    //weak var delegate: EditTaskViewControllerDelegate?
     override func viewDidLoad()
     {
         super.viewDidLoad()
@@ -51,4 +59,10 @@ class EditTaskViewController: UIViewController {
         editTitleLandscape.layer.borderColor = UIColor(hue: 0.65, saturation: 0.57, brightness: 0.92, alpha: 1).cgColor
         taskDescriptionLandscape.layer.borderColor = UIColor(hue: 0.65, saturation: 0.57, brightness: 0.92, alpha: 1).cgColor
     }
+    
+    
+//    @IBAction func addTask(_ sender: Any) {
+//        let task = TodoList(title: editTitle.text!, due_date: "", description: "")
+//        delegate?.EditTaskViewController(self, saveTask: task)
+//    }
 }
