@@ -2,12 +2,21 @@
 //  PostService.swift
 //  Todo
 //
-//  Created by Aurela Bala on 2022-11-25.
-//
+/* Created and Developed by
+Adriana Diaz Torres - 301157161
+Aurela Bala - 301279255
+Date Created: 23/11/2022
+ Simple To Do List App. This version performs not only the User Interface of the APP, but also functionalities such as create a new taks, see all tasks and edit a task.
+
+ Through PostService we can fetch all the tasks that are stored in the Firebase and display them on the TableView cell
+ Screen performs in both modes: portrait and landscape
+ Version: 1.2.0
+ */
 
 import UIKit
 import Firebase
 
+//task struct
 struct TaskItem
 {
     var name: String
@@ -16,6 +25,7 @@ struct TaskItem
     var hasDueDate: Bool
     var dueDate: String
     
+    //init method
     init(keyID: String, dictionary: [String: Any])
     {
         self.name = dictionary["name"] as? String ?? ""
@@ -23,7 +33,6 @@ struct TaskItem
         self.notes = dictionary["notes"] as? String ?? ""
         self.hasDueDate = dictionary["hasDueDate"] as? Bool ?? false
         self.dueDate = dictionary["dueDate"] as? String ?? ""
-
     }
 }
 
@@ -33,15 +42,24 @@ struct PostService
     static let shared = PostService()
     let DB_REFERENCE = Database.database().reference()
     
-    func fetchAllTasks()
+    //fetch all the tasks
+    func fetchAllTasks(completion: @escaping([TaskItem]) -> Void)
     {
+        var allTasks = [TaskItem]()
         DB_REFERENCE.child("tasks").observe(.childAdded)
         {
-            (snapshot) in fetchOneTask(id: snapshot.key)
+            (snapshot) in
+            //fetchOneTask(id: snapshot.key)
+            fetchOneTask(id: snapshot.key) { task in
+                allTasks.append(task)
+                completion(allTasks)
+                
+            }
         }
     }
     
-    func fetchOneTask(id: String)
+    //create the task object for each task items in firebase
+    func fetchOneTask(id: String, completion: @escaping(TaskItem) -> Void )
     {
         DB_REFERENCE.child("tasks").child(id).observeSingleEvent(of: .value)
         {
@@ -49,7 +67,7 @@ struct PostService
             guard let dictionary = snapshot.value as? [String: Any] else
             { return }
             let task = TaskItem(keyID: id, dictionary: dictionary)
-            print (task)
+            completion(task)
         }
     }
 }

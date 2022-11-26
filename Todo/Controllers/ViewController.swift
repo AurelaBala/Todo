@@ -21,6 +21,16 @@ import SwiftUI
 
 class ViewController: UIViewController
 {
+    
+    var taskItems = [TaskItem]()
+    {
+        //if all task items are setted then reaload the data in the table view
+        didSet
+        {
+            tableView.reloadData()
+        }
+    }
+    
     let reuseIdentifier = "TaskCell"
     
 
@@ -41,7 +51,12 @@ class ViewController: UIViewController
         //call configTableView function
         configTableView()
         
-        PostService.shared.fetchAllTasks()
+        //shared 
+        PostService.shared.fetchAllTasks
+        {
+            (allItems) in
+            self.taskItems = allItems
+        }
     }
     
     //unwind segue
@@ -70,7 +85,7 @@ extension ViewController: UITableViewDataSource
     //return the number of rows in a section
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int
         {
-          return 5
+           return taskItems.count
         }
     
     //return each task
@@ -80,6 +95,7 @@ extension ViewController: UITableViewDataSource
         cell.backgroundColor = .white
         cell.selectionStyle = .none
         cell.contentView.isUserInteractionEnabled = false
+        cell.taskItem = taskItems[indexPath.row]
         return cell
     }
     

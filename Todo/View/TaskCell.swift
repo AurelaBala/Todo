@@ -18,6 +18,34 @@ import UIKit
 
 class TaskCell: UITableViewCell
 {
+    //for each item in task item set the data
+    var taskItem: TaskItem?
+    {
+        didSet
+        {
+            taskTitle.text = taskItem?.name
+            //call the handleSwitchAction method
+            handleSwitchAction(sender: switchControl)
+            //if task is completed then switch that on
+            if let isCompleted = taskItem?.isCompleted, isCompleted
+            {
+                switchControl.isOn = true
+            }
+            else
+            {
+                switchControl.isOn = false
+            }
+            //if task is completed then switch that off
+            if let hasDueDate = taskItem?.hasDueDate, hasDueDate
+            {
+                taskDueDate.text = taskItem?.dueDate
+            }
+            else
+            {
+                taskDueDate.text = "Has no due date"
+            }
+        }
+    }
    //create the custom task tile label
     private let taskTitle: UILabel = {
         let label = UILabel()
@@ -87,7 +115,6 @@ class TaskCell: UITableViewCell
            
            if sender.isOn
         {
-               print("Turned on")
                taskDueDate.textColor = UIColor(hue: 0.49, saturation: 0.41, brightness: 0.65, alpha: 1)
                UIApplication.shared.registerForRemoteNotifications()
                attributedString.addAttribute(.strikethroughStyle, value: 2, range: NSMakeRange(0, attributedString.length-1))
@@ -95,7 +122,6 @@ class TaskCell: UITableViewCell
         else
         {
             UIApplication.shared.unregisterForRemoteNotifications()
-            print("Turned off")
             taskDueDate.textColor = UIColor(hue: 358, saturation: 0.62, brightness: 0.48, alpha: 1)
             attributedString.removeAttribute(.strikethroughStyle, range: NSMakeRange(0, attributedString.length-2))
 
