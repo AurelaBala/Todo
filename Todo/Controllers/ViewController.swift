@@ -40,6 +40,8 @@ class ViewController: UIViewController
         tableView.backgroundColor = .white
         //call configTableView function
         configTableView()
+        
+        PostService.shared.fetchAllTasks()
     }
     
     //unwind segue

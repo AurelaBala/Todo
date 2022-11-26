@@ -15,6 +15,7 @@
 		3F16E191291CB0B100CC9898 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3F16E18F291CB0B100CC9898 /* LaunchScreen.storyboard */; };
 		3F16E19D291DFCBB00CC9898 /* EditTaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F16E19C291DFCBB00CC9898 /* EditTaskViewController.swift */; };
 		3F551FA32931766100E6DFE6 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F551FA22931766100E6DFE6 /* Extensions.swift */; };
+		3F551FA92931CD9300E6DFE6 /* PostService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F551FA82931CD9300E6DFE6 /* PostService.swift */; };
 		3F937B6229314F9000F4892C /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3F937B6129314F9000F4892C /* GoogleService-Info.plist */; };
 		3F937B652931573700F4892C /* FirebaseDatabase in Frameworks */ = {isa = PBXBuildFile; productRef = 3F937B642931573700F4892C /* FirebaseDatabase */; };
 		3F937B672931573700F4892C /* FirebaseFunctions in Frameworks */ = {isa = PBXBuildFile; productRef = 3F937B662931573700F4892C /* FirebaseFunctions */; };
@@ -34,6 +35,7 @@
 		3F16E192291CB0B100CC9898 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3F16E19C291DFCBB00CC9898 /* EditTaskViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditTaskViewController.swift; sourceTree = "<group>"; };
 		3F551FA22931766100E6DFE6 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		3F551FA82931CD9300E6DFE6 /* PostService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostService.swift; sourceTree = "<group>"; };
 		3F937B6129314F9000F4892C /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		3F937B6A2931594C00F4892C /* TaskCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskCell.swift; sourceTree = "<group>"; };
 		3F9AA33A292ECE89005E2DEB /* TaskViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskViewController.swift; sourceTree = "<group>"; };
@@ -72,6 +74,7 @@
 		3F16E183291CB0B000CC9898 /* Todo */ = {
 			isa = PBXGroup;
 			children = (
+				3F551FA72931CD5B00E6DFE6 /* Firebase */,
 				3F16E184291CB0B000CC9898 /* AppDelegate.swift */,
 				3F16E186291CB0B000CC9898 /* SceneDelegate.swift */,
 				3F937B6E29315A2200F4892C /* Model */,
@@ -84,6 +87,14 @@
 				3F937B6129314F9000F4892C /* GoogleService-Info.plist */,
 			);
 			path = Todo;
+			sourceTree = "<group>";
+		};
+		3F551FA72931CD5B00E6DFE6 /* Firebase */ = {
+			isa = PBXGroup;
+			children = (
+				3F551FA82931CD9300E6DFE6 /* PostService.swift */,
+			);
+			path = Firebase;
 			sourceTree = "<group>";
 		};
 		3F937B6C293159C800F4892C /* Controllers */ = {
@@ -203,6 +214,7 @@
 				3F16E189291CB0B000CC9898 /* ViewController.swift in Sources */,
 				3F551FA32931766100E6DFE6 /* Extensions.swift in Sources */,
 				3F9AA33B292ECE89005E2DEB /* TaskViewController.swift in Sources */,
+				3F551FA92931CD9300E6DFE6 /* PostService.swift in Sources */,
 				3F16E19D291DFCBB00CC9898 /* EditTaskViewController.swift in Sources */,
 				3F937B6B2931594C00F4892C /* TaskCell.swift in Sources */,
 				3F16E185291CB0B000CC9898 /* AppDelegate.swift in Sources */,
