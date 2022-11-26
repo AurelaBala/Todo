@@ -21,16 +21,29 @@ class TaskViewController: UIViewController {
     
     @IBOutlet weak var newTaskTitle: UITextField!
     
+    @IBOutlet weak var taskView: UIView!
     override func viewDidLoad()
     {
         super.viewDidLoad()
+        self.taskView.layer.cornerRadius = 10.0
+        newTaskTitle.layer.cornerRadius = 10.0
+        newTaskTitle.layer.borderWidth = 1
+        newTaskTitle.layer.borderColor = UIColor(hue: 0.65, saturation: 0.57, brightness: 0.92, alpha: 1).cgColor
+        
         newTaskTitle.delegate = self
     }
     
 //method for save button pressed
     @IBAction func saveNewTask(_ sender: UIButton)
     {
-        print(newTaskTitle.text)
+        guard let  taskName = newTaskTitle.text else { return }
+        //call the shared property and upload the new task with the textfield value
+        PostService.shared.insertNewTask(name: taskName)
+        {
+            (error, reference) in
+            self.newTaskTitle.text = ""
+            self.dismiss(animated: true, completion: nil)
+        }
     }
 }
 

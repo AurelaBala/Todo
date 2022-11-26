@@ -23,18 +23,21 @@ class TaskCell: UITableViewCell
     {
         didSet
         {
+            let attributedString = NSMutableAttributedString(string: taskTitle.text!)
             taskTitle.text = taskItem?.name
-            //call the handleSwitchAction method
-            handleSwitchAction(sender: switchControl)
             //if task is completed then switch that on
             if let isCompleted = taskItem?.isCompleted, isCompleted
             {
                 switchControl.isOn = true
+                taskDueDate.textColor = UIColor(hue: 0.49, saturation: 0.41, brightness: 0.65, alpha: 1)
+                attributedString.addAttribute(.strikethroughStyle, value: 2, range: NSMakeRange(0, attributedString.length-1))
+                taskTitle.attributedText = attributedString
             }
             else
             {
                 switchControl.isOn = false
             }
+            
             //if task is completed then switch that off
             if let hasDueDate = taskItem?.hasDueDate, hasDueDate
             {

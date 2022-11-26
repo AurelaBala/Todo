@@ -400,33 +400,61 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="AtH-WX-7Jw">
-                                <rect key="frame" x="16" y="132" width="361" height="34"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rc8-94-1bN">
-                                <rect key="frame" x="309" y="80" width="61" height="35"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="filled" title="Save"/>
-                                <connections>
-                                    <action selector="saveNewTask:" destination="CCS-WT-yWI" eventType="touchUpInside" id="W1v-K7-Pil"/>
-                                </connections>
-                            </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CPq-Od-7vm">
+                                <rect key="frame" x="0.0" y="168" width="393" height="684"/>
+                                <subviews>
+                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="AtH-WX-7Jw">
+                                        <rect key="frame" x="23" y="40" width="347" height="47"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="textColor" red="0.39607843139999999" green="0.45098039220000002" blue="0.92156862750000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rc8-94-1bN">
+                                        <rect key="frame" x="23" y="116" width="347" height="47"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="47" id="6cM-mt-1Gn"/>
+                                        </constraints>
+                                        <color key="tintColor" red="0.38431372549999998" green="0.65490196079999996" blue="0.64313725489999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="filled" title="Save">
+                                            <fontDescription key="titleFontDescription" type="boldSystem" pointSize="17"/>
+                                        </buttonConfiguration>
+                                        <connections>
+                                            <action selector="saveNewTask:" destination="CCS-WT-yWI" eventType="touchUpInside" id="W1v-K7-Pil"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" red="0.96645065559999999" green="0.96521213490000002" blue="0.98684600499999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <constraints>
+                                    <constraint firstItem="AtH-WX-7Jw" firstAttribute="top" secondItem="CPq-Od-7vm" secondAttribute="top" constant="40" id="8WN-bQ-S3i"/>
+                                    <constraint firstItem="AtH-WX-7Jw" firstAttribute="leading" secondItem="Rc8-94-1bN" secondAttribute="leading" id="9A6-Pi-cHj"/>
+                                    <constraint firstAttribute="trailing" secondItem="AtH-WX-7Jw" secondAttribute="trailing" constant="23" id="MpH-sI-cpJ"/>
+                                    <constraint firstItem="Rc8-94-1bN" firstAttribute="top" secondItem="AtH-WX-7Jw" secondAttribute="bottom" constant="29" id="XmW-xZ-qs5"/>
+                                    <constraint firstItem="Rc8-94-1bN" firstAttribute="top" secondItem="CPq-Od-7vm" secondAttribute="top" constant="116" id="jEF-iU-DAH"/>
+                                    <constraint firstItem="Rc8-94-1bN" firstAttribute="trailing" secondItem="AtH-WX-7Jw" secondAttribute="trailing" id="o4R-Pv-SYV"/>
+                                    <constraint firstItem="AtH-WX-7Jw" firstAttribute="leading" secondItem="CPq-Od-7vm" secondAttribute="leading" constant="23" id="pWX-8D-T9l"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Fb7-QB-cWF"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" red="0.40000003579999999" green="0.44705885649999999" blue="0.92156863209999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <constraints>
+                            <constraint firstItem="Fb7-QB-cWF" firstAttribute="trailing" secondItem="CPq-Od-7vm" secondAttribute="trailing" id="1mK-6N-hZw"/>
+                            <constraint firstItem="CPq-Od-7vm" firstAttribute="top" secondItem="Fb7-QB-cWF" secondAttribute="top" constant="109" id="Eoq-Kf-bBP"/>
+                            <constraint firstAttribute="bottom" secondItem="CPq-Od-7vm" secondAttribute="bottom" id="IJo-kh-Y2h"/>
+                            <constraint firstItem="CPq-Od-7vm" firstAttribute="leading" secondItem="Fb7-QB-cWF" secondAttribute="leading" id="q9U-U9-kub"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="m3b-2u-jhE"/>
                     <connections>
                         <outlet property="newTaskTitle" destination="AtH-WX-7Jw" id="FdG-fz-FFx"/>
+                        <outlet property="taskView" destination="CPq-Od-7vm" id="EZi-Rx-eHa"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QpW-CU-o4u" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-176" y="132"/>
+            <point key="canvasLocation" x="608.39694656488552" y="-583.09859154929575"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>

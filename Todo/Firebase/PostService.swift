@@ -24,7 +24,7 @@ struct TaskItem
     var notes: String
     var hasDueDate: Bool
     var dueDate: String
-    
+    var taskID: String
     //init method
     init(keyID: String, dictionary: [String: Any])
     {
@@ -33,6 +33,7 @@ struct TaskItem
         self.notes = dictionary["notes"] as? String ?? ""
         self.hasDueDate = dictionary["hasDueDate"] as? Bool ?? false
         self.dueDate = dictionary["dueDate"] as? String ?? ""
+        self.taskID = dictionary["taskID"] as? String ?? ""
     }
 }
 
@@ -70,4 +71,29 @@ struct PostService
             completion(task)
         }
     }
+    
+    //insert a new task into the firebase database through TaskViewController
+    func insertNewTask(name: String, completion: @escaping(Error?, DatabaseReference) -> Void)
+    {
+        //create the array
+        let data =
+        [
+            "name": name,
+            "isCompleted": false,
+            "notes": "",
+            "hasDueDate": false,
+            "dueDate": ""
+        ] as [String: Any]
+        //generate an id for the new entry task
+        let taskID = DB_REFERENCE.child("tasks").childByAutoId()
+        taskID.updateChildValues(data, withCompletionBlock: completion)
+        taskID.updateChildValues(data) {(error, reference)
+            in
+            let id = ["taskID": taskID.key!]
+            //upload the new task
+            DB_REFERENCE.child("tasks").child(taskID.key!).updateChildValues(id, withCompletionBlock: completion)
+        }
+    }
+    
+    
 }
