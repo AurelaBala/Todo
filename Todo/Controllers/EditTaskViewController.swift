@@ -5,21 +5,18 @@
 /* Created and Developed by
 Adriana Diaz Torres - 301157161
 Aurela Bala - 301279255
-Date Created: 09/11/2022
-Simple To Do List App. This version performs only the User Interface of the APP.
+Date Created: 23/11/2022
+ Simple To Do List App. This version performs not only the User Interface of the APP, but also functionalities such as create a new taks, see all tasks and edit a task.
 
 The EditTaskViewController is the Edit Task Details screen that includes all the task details ( title, description, due date, switch controller and buttons to edit, delete and cancel the actions).
 Screen performs in both modes: portrait and landscape
-Version: 1.1.0
+Version: 1.2.0
 */
 
 
 import UIKit
 import SwiftUI
 
-//protocol EditTaskViewControllerDelegate: AnyObject {
-//    func EditTaskViewController (_ vc: EditTaskViewController, saveTask task: TodoList)
-//}
 
 class EditTaskViewController: UIViewController {
 
@@ -31,18 +28,11 @@ class EditTaskViewController: UIViewController {
     @IBOutlet weak var editTitleLandscape: UITextField!
     @IBOutlet weak var taskDescriptionLandscape: UITextView!
     
-    var task: TodoList?
-    //var task2 = ""
     
-    //weak var delegate: EditTaskViewControllerDelegate?
     override func viewDidLoad()
     {
         super.viewDidLoad()
-        
-        editTitle.text = task?.title
-        taskDescription.text = task?.description
-        
-        //custom design for the portrair mode elements
+        //custom design for the portrait mode elements
         self.editView.layer.cornerRadius = 10.0
         editTaskView.layer.cornerRadius = 10.0
         editTitle.layer.cornerRadius = 10
@@ -60,9 +50,4 @@ class EditTaskViewController: UIViewController {
         taskDescriptionLandscape.layer.borderColor = UIColor(hue: 0.65, saturation: 0.57, brightness: 0.92, alpha: 1).cgColor
     }
     
-    
-//    @IBAction func addTask(_ sender: Any) {
-//        let task = TodoList(title: editTitle.text!, due_date: "", description: "")
-//        delegate?.EditTaskViewController(self, saveTask: task)
-//    }
 }

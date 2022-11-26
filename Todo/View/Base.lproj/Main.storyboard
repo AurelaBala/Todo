@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="oX0-PF-ORu">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
@@ -9,34 +9,6 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Table View Controller-->
-        <scene sceneID="5aI-rK-Obw">
-            <objects>
-                <tableViewController id="oX0-PF-ORu" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="H5Q-ST-xB9">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                        <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="bTF-7V-R0g">
-                                <rect key="frame" x="0.0" y="50" width="393" height="43.666667938232422"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="bTF-7V-R0g" id="RLj-df-y1g">
-                                    <rect key="frame" x="0.0" y="0.0" width="393" height="43.666667938232422"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                </tableViewCellContentView>
-                            </tableViewCell>
-                        </prototypes>
-                        <connections>
-                            <outlet property="dataSource" destination="oX0-PF-ORu" id="Vfn-oe-72t"/>
-                            <outlet property="delegate" destination="oX0-PF-ORu" id="Fo5-a9-r5Y"/>
-                        </connections>
-                    </tableView>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="L79-7y-vFU" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-1895" y="-520"/>
-        </scene>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
@@ -54,26 +26,26 @@
                                 <color key="sectionIndexTrackingBackgroundColor" red="0.55294120309999995" green="0.27450981740000002" blue="0.094117648900000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="TaskCell" id="K0A-vo-T33" customClass="MarkAsDoneTableViewCell" customModule="Todo" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="50" width="393" height="42.666667938232422"/>
+                                        <rect key="frame" x="0.0" y="50" width="393" height="43"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="K0A-vo-T33" id="Rzj-WA-s3D">
-                                            <rect key="frame" x="0.0" y="0.0" width="393" height="42.666667938232422"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="393" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Task 1" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dTm-eh-HtO">
-                                                    <rect key="frame" x="22" y="5.6666666666666661" width="260" height="20.333333333333336"/>
+                                                    <rect key="frame" x="22" y="5.9999999999999982" width="260" height="20.333333333333329"/>
                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                                     <color key="textColor" red="0.30980392156862746" green="0.25490196078431371" blue="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Overdue" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="966-12-uOD">
-                                                    <rect key="frame" x="22.000000000000004" y="25.333333333333332" width="48.333333333333343" height="14.333333333333332"/>
+                                                    <rect key="frame" x="22.000000000000004" y="25.666666666666668" width="48.333333333333343" height="14.333333333333332"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                     <color key="textColor" red="0.49019607843137253" green="0.18823529411764706" blue="0.19607843137254902" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <button opaque="NO" contentMode="scaleToFill" restorationIdentifier="editt" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="00Y-gv-zKa">
-                                                    <rect key="frame" x="331" y="4" width="42" height="34.666666666666664"/>
+                                                    <rect key="frame" x="331" y="4" width="42" height="35"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="42" id="NUI-ds-cof"/>
                                                     </constraints>
@@ -87,15 +59,12 @@
                                                     </connections>
                                                 </button>
                                                 <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" preferredStyle="sliding" translatesAutoresizingMaskIntoConstraints="NO" id="WJH-cN-Ri0">
-                                                    <rect key="frame" x="282" y="5.6666666666666661" width="51" height="31.333333333333336"/>
+                                                    <rect key="frame" x="282" y="5.9999999999999982" width="51" height="31.333333333333329"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="49" id="9qO-w6-jcK"/>
                                                         <constraint firstAttribute="height" constant="31.329999999999998" id="pJ5-5q-9SN"/>
                                                     </constraints>
                                                     <color key="onTintColor" red="0.38431376220000002" green="0.6549019814" blue="0.64313727620000005" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                                    <connections>
-                                                        <action selector="completed:" destination="K0A-vo-T33" eventType="valueChanged" id="bdv-Gs-NDz"/>
-                                                    </connections>
                                                 </switch>
                                             </subviews>
                                             <constraints>
@@ -113,10 +82,7 @@
                                         </tableViewCellContentView>
                                         <inset key="separatorInset" minX="10" minY="0.0" maxX="10" maxY="0.0"/>
                                         <connections>
-                                            <outlet property="taskDueDate" destination="966-12-uOD" id="H5T-Ax-2b9"/>
-                                            <outlet property="taskLabel" destination="dTm-eh-HtO" id="sh6-L9-Sre"/>
-                                            <outlet property="taskSwitch" destination="WJH-cN-Ri0" id="XtO-WD-7Tg"/>
-                                            <segue destination="qJS-Ds-FSI" kind="show" destinationCreationSelector="editTaskViewController:" id="nwO-Os-Jef"/>
+                                            <segue destination="qJS-Ds-FSI" kind="show" id="nwO-Os-Jef"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -138,6 +104,9 @@
                                     </backgroundConfiguration>
                                     <color key="baseForegroundColor" red="0.31764706970000001" green="0.35686278339999999" blue="0.73725497719999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 </buttonConfiguration>
+                                <connections>
+                                    <action selector="createNewTaskBttn:" destination="BYZ-38-t0r" eventType="touchUpInside" id="xeb-dT-RNf"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Todo list | All tasks" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="E3h-Q7-Fwt">
                                 <rect key="frame" x="15.999999999999986" y="117.00000000000001" width="237.66666666666663" height="32.666666666666671"/>
@@ -168,12 +137,13 @@
                     </view>
                     <navigationItem key="navigationItem" id="8c8-KZ-sfc"/>
                     <connections>
+                        <outlet property="addTaskButton" destination="iea-Gn-4v2" id="NGV-kL-zjZ"/>
                         <outlet property="tableView" destination="DOB-QF-jev" id="oMJ-s1-jTZ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1074" y="-520"/>
+            <point key="canvasLocation" x="-1074.0458015267175" y="-520.42253521126759"/>
         </scene>
         <!--Edit Task View Controller-->
         <scene sceneID="3Mt-c9-G1z">
@@ -207,7 +177,6 @@
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="filled" image="checkmark.circle.fill" catalog="system"/>
                                         <connections>
-                                            <action selector="addTask:" destination="qJS-Ds-FSI" eventType="touchUpInside" id="CxW-Ac-URF"/>
                                             <segue destination="kx8-Z4-tJP" kind="unwind" unwindAction="goBackWithSegue:" id="GAo-I6-YPF"/>
                                         </connections>
                                     </button>
@@ -426,7 +395,7 @@
         <!--Task View Controller-->
         <scene sceneID="AHF-wZ-09C">
             <objects>
-                <viewController id="CCS-WT-yWI" customClass="TaskViewController" customModule="Todo" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="TaskViewController" id="CCS-WT-yWI" customClass="TaskViewController" customModule="Todo" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Yuz-vh-PUy">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -443,7 +412,7 @@
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="Save"/>
                                 <connections>
-                                    <action selector="addTask:" destination="CCS-WT-yWI" eventType="touchUpInside" id="2ie-Gg-env"/>
+                                    <action selector="saveNewTask:" destination="CCS-WT-yWI" eventType="touchUpInside" id="W1v-K7-Pil"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -452,7 +421,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="m3b-2u-jhE"/>
                     <connections>
-                        <outlet property="newTastName" destination="AtH-WX-7Jw" id="wdP-dI-X8z"/>
+                        <outlet property="newTaskTitle" destination="AtH-WX-7Jw" id="FdG-fz-FFx"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QpW-CU-o4u" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
