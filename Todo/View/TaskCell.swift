@@ -42,6 +42,7 @@ class TaskCell: UITableViewCell
             else
             {
                 switchControl.isOn = false
+                attributedString.removeAttribute(.strikethroughStyle, range: NSMakeRange(0, attributedString.length-2))
             }
             taskTitle.attributedText = attributedString
             //if task is completed then switch that off
