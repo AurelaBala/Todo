@@ -7,7 +7,7 @@
 Adriana Diaz Torres - 301157161
 Aurela Bala - 301279255
 Date Created: 23/11/2022
- Simple To Do List App. This version performs not only the User Interface of the APP, but also functionalities such as create a new taks, see all tasks and edit a task.
+ Simple To Do List App. This version performs not only the User Interface of the APP, but also functionalities such as create a new taks, see all tasks, edit a task and delete a task.
 
  The View Controller is the Todo List Screen that includes the list of all of the tasks and for each item includes a title, a due date, a switch control and an edit button.
  Includes a table view which is populated from the Firebase.
