@@ -6,7 +6,7 @@
 Adriana Diaz Torres - 301157161
 Aurela Bala - 301279255
 Date Created: 23/11/2022
- Simple To Do List App. This version performs not only the User Interface of the APP, but also functionalities such as create a new taks, see all tasks and edit a task.
+ Simple To Do List App. This version performs not only the User Interface of the APP, but also functionalities such as create a new taks, see all tasks, edit a task and delete a task.
 
  Through PostService we can fetch all the tasks that are stored in the Firebase and display them on the TableView cell
  Screen performs in both modes: portrait and landscape
@@ -50,7 +50,6 @@ struct PostService
         DB_REFERENCE.child("tasks").observe(.childAdded)
         {
             (snapshot) in
-            //fetchOneTask(id: snapshot.key)
             fetchOneTask(id: snapshot.key) { task in
                 allTasks.append(task)
                 completion(allTasks)
@@ -73,7 +72,7 @@ struct PostService
     }
     
     //insert a new task into the firebase database through TaskViewController
-    func insertNewTask(name: String, completion: @escaping(Error?, DatabaseReference) -> Void)
+    func insertNewTask(name: String,  completion: @escaping(Error?, DatabaseReference) -> Void)
     {
         //create the array
         let data =
@@ -92,8 +91,30 @@ struct PostService
             let id = ["taskID": taskID.key!]
             //upload the new task
             DB_REFERENCE.child("tasks").child(taskID.key!).updateChildValues(id, withCompletionBlock: completion)
+            
         }
+    
     }
+    
+   //update task details method
+    func updateAllDetails(taskID: String, isCompleted: Bool, name: String, notes: String, hasDueDate: Bool, dueDate: String, completion: @escaping(Error?, DatabaseReference) -> Void)
+    {
+        let data = [
+         "isCompleted": isCompleted,
+        "name": name,
+         "notes": notes,
+         "hasDueDate": hasDueDate,
+         "dueDate": dueDate
+        ] as [String : Any]
+        DB_REFERENCE.child("tasks").child(taskID).updateChildValues(data, withCompletionBlock: completion)
+    }
+    
+    //delete a task method
+    func deleteTask(taskID: String, completion: @escaping(Error?, DatabaseReference) -> Void)
+     {
+         DB_REFERENCE.child("tasks").child(taskID).removeValue()
+            
+     }
     
     
 }

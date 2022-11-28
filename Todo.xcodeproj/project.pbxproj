@@ -74,7 +74,6 @@
 		3F16E183291CB0B000CC9898 /* Todo */ = {
 			isa = PBXGroup;
 			children = (
-				3F551FA72931CD5B00E6DFE6 /* Firebase */,
 				3F16E184291CB0B000CC9898 /* AppDelegate.swift */,
 				3F16E186291CB0B000CC9898 /* SceneDelegate.swift */,
 				3F937B6E29315A2200F4892C /* Model */,
@@ -119,6 +118,7 @@
 		3F937B6E29315A2200F4892C /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				3F551FA72931CD5B00E6DFE6 /* Firebase */,
 			);
 			path = Model;
 			sourceTree = "<group>";

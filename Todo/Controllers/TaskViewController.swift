@@ -44,6 +44,8 @@ class TaskViewController: UIViewController {
             self.newTaskTitle.text = ""
             self.dismiss(animated: true, completion: nil)
         }
+        
+        self.performSegue(withIdentifier: "goBack", sender: self)
     }
 }
 
@@ -54,5 +56,5 @@ extension TaskViewController: UITextFieldDelegate
         textField.resignFirstResponder()
         return true
     }
-    
+
 }
