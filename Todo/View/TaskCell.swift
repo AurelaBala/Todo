@@ -37,7 +37,7 @@ class TaskCell: UITableViewCell
             {
                 switchControl.isOn = true
                 taskDueDate.textColor = UIColor(hue: 0.49, saturation: 0.41, brightness: 0.65, alpha: 1)
-                attributedString.addAttribute(.strikethroughStyle, value: 2, range: NSMakeRange(0, attributedString.length-1))
+                attributedString.addAttribute(.strikethroughStyle, value: 2, range: NSMakeRange(0, attributedString.length-0))
             }
             else
             {
@@ -141,7 +141,7 @@ class TaskCell: UITableViewCell
         {
                taskDueDate.textColor = UIColor(hue: 0.49, saturation: 0.41, brightness: 0.65, alpha: 1)
                UIApplication.shared.registerForRemoteNotifications()
-               attributedString.addAttribute(.strikethroughStyle, value: 2, range: NSMakeRange(0, attributedString.length-1))
+               attributedString.addAttribute(.strikethroughStyle, value: 2, range: NSMakeRange(0, attributedString.length-0))
         }
         else
         {
@@ -154,7 +154,7 @@ class TaskCell: UITableViewCell
         taskTitle.attributedText = attributedString
     
         //when the switch changes its state, change that on Firebase too
-        var id = taskItem?.taskID
+        let id = taskItem?.taskID
         let name = taskItem?.name
         let notes = taskItem?.notes
         let hasDueDate = taskItem?.hasDueDate.self
@@ -172,8 +172,9 @@ class TaskCell: UITableViewCell
         let vc = EditTaskViewController()
         let attributedString = NSMutableAttributedString(string: TASK_ID.text!)
         TASK_ID.attributedText = attributedString
-        var id = TASK_ID.attributedText?.string
+        let id = TASK_ID.attributedText?.string
         vc.getID(a: id!)
+       
     }
     
 

@@ -26,10 +26,10 @@
                                 <color key="sectionIndexTrackingBackgroundColor" red="0.55294120309999995" green="0.27450981740000002" blue="0.094117648900000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="TaskCell" id="K0A-vo-T33" customClass="TaskCell" customModule="Todo" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="50" width="393" height="43"/>
+                                        <rect key="frame" x="0.0" y="50" width="393" height="43.333332061767578"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="K0A-vo-T33" id="Rzj-WA-s3D" customClass="TaskCell" customModule="Todo" customModuleProvider="target">
-                                            <rect key="frame" x="0.0" y="0.0" width="393" height="43"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="393" height="43.333332061767578"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Task 1" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dTm-eh-HtO">
@@ -39,13 +39,13 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Overdue" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="966-12-uOD">
-                                                    <rect key="frame" x="22.000000000000004" y="25.666666666666668" width="48.333333333333343" height="14.333333333333332"/>
+                                                    <rect key="frame" x="22.000000000000004" y="25.999999999999996" width="48.333333333333343" height="14.333333333333332"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                     <color key="textColor" red="0.49019607843137253" green="0.18823529411764706" blue="0.19607843137254902" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <button opaque="NO" contentMode="scaleToFill" restorationIdentifier="editt" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="00Y-gv-zKa">
-                                                    <rect key="frame" x="331" y="4" width="42" height="35"/>
+                                                    <rect key="frame" x="331" y="4" width="42" height="35.333333333333336"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="42" id="NUI-ds-cof"/>
                                                     </constraints>
@@ -448,6 +448,7 @@
                                         </buttonConfiguration>
                                         <connections>
                                             <action selector="saveNewTask:" destination="CCS-WT-yWI" eventType="touchUpInside" id="W1v-K7-Pil"/>
+                                            <segue destination="RuJ-KI-xVH" kind="unwind" identifier="goBack" unwindAction="goBackWithSegue:" id="sa0-AZ-Fw4"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -462,6 +463,12 @@
                                     <constraint firstItem="AtH-WX-7Jw" firstAttribute="leading" secondItem="CPq-Od-7vm" secondAttribute="leading" constant="23" id="pWX-8D-T9l"/>
                                 </constraints>
                             </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Add a New Task" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NUB-RV-czd">
+                                <rect key="frame" x="16" y="127" width="199" height="33"/>
+                                <fontDescription key="fontDescription" name="Kailasa-Bold" family="Kailasa" pointSize="25"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Fb7-QB-cWF"/>
                         <color key="backgroundColor" red="0.40000003579999999" green="0.44705885649999999" blue="0.92156863209999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -469,6 +476,8 @@
                             <constraint firstItem="Fb7-QB-cWF" firstAttribute="trailing" secondItem="CPq-Od-7vm" secondAttribute="trailing" id="1mK-6N-hZw"/>
                             <constraint firstItem="CPq-Od-7vm" firstAttribute="top" secondItem="Fb7-QB-cWF" secondAttribute="top" constant="109" id="Eoq-Kf-bBP"/>
                             <constraint firstAttribute="bottom" secondItem="CPq-Od-7vm" secondAttribute="bottom" id="IJo-kh-Y2h"/>
+                            <constraint firstItem="NUB-RV-czd" firstAttribute="leading" secondItem="Fb7-QB-cWF" secondAttribute="leading" constant="16" id="cyq-gJ-4ct"/>
+                            <constraint firstItem="NUB-RV-czd" firstAttribute="top" secondItem="Fb7-QB-cWF" secondAttribute="top" constant="68" id="gOq-Au-U6V"/>
                             <constraint firstItem="CPq-Od-7vm" firstAttribute="leading" secondItem="Fb7-QB-cWF" secondAttribute="leading" id="q9U-U9-kub"/>
                         </constraints>
                     </view>
@@ -479,8 +488,9 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QpW-CU-o4u" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="RuJ-KI-xVH" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="-616" y="-508"/>
+            <point key="canvasLocation" x="-669.46564885496184" y="-508.45070422535213"/>
         </scene>
     </scenes>
     <resources>

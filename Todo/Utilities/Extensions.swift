@@ -6,7 +6,7 @@
 Adriana Diaz Torres - 301157161
 Aurela Bala - 301279255
 Date Created: 23/11/2022
- Simple To Do List App. This version performs not only the User Interface of the APP, but also functionalities such as create a new taks, see all tasks and edit a task.
+ Simple To Do List App. This version performs not only the User Interface of the APP, but also functionalities such as create a new taks, see all tasks, edit a task and delete a task.
  Version: 1.2.0
  */
 

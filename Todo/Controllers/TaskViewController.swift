@@ -38,14 +38,14 @@ class TaskViewController: UIViewController {
     {
         guard let  taskName = newTaskTitle.text else { return }
         //call the shared property and upload the new task with the textfield value
-        PostService.shared.insertNewTask(name: taskName)
-        {
-            (error, reference) in
-            self.newTaskTitle.text = ""
-            self.dismiss(animated: true, completion: nil)
-        }
-        
-        self.performSegue(withIdentifier: "goBack", sender: self)
+        if(newTaskTitle.text != "" ) {
+            PostService.shared.insertNewTask(name: taskName)
+            {
+                (error, reference) in
+                self.newTaskTitle.text = ""
+                self.dismiss(animated: true, completion: nil)
+            }
+            self.performSegue(withIdentifier: "goBack", sender: self) }
     }
 }
 
