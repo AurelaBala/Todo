@@ -128,9 +128,17 @@ class EditTaskViewController: UIViewController {
     //method for save button click
     @IBAction func saveNewDetails(_ sender: UIButton)
     {
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "YYYY-MM-dd, hh:mm:ss a"
-        let dateTxt = dateFormatter.string(from: dueDatePortrait.date)
+        var dateTxt = ""
+        if(hasDueDatePortrait.isOn)
+        {
+            let dateFormatter = DateFormatter()
+            dateFormatter.dateFormat = "YYYY-MM-dd, hh:mm:ss a"
+            dateTxt = dateFormatter.string(from: dueDatePortrait.date)
+        }
+        else
+        {
+            dateTxt = ""
+        }
         // Create Alert
         let dialogMessage = UIAlertController(title: "Confirm", message: "Are you sure you want to update this task?", preferredStyle: .alert)
         // Create yes button with action handler, if yes is pressed then perform the changes into database
