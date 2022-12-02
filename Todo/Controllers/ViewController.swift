@@ -6,13 +6,13 @@
 /* Created and Developed by
 Adriana Diaz Torres - 301157161
 Aurela Bala - 301279255
-Date Created: 23/11/2022
+Date Created: 01/12/2022
  Simple To Do List App. This version performs not only the User Interface of the APP, but also functionalities such as create a new taks, see all tasks, edit a task and delete a task.
 
- The View Controller is the Todo List Screen that includes the list of all of the tasks and for each item includes a title, a due date, a switch control and an edit button.
+ The View Controller is the Todo List Screen that includes the list of all of the tasks and for each item includes a title and a due date, and also performs action on swipe left and swipe right.
  Includes a table view which is populated from the Firebase.
  Screen performs in both modes: portrait and landscape
- Version: 1.2.0
+ Version: 1.3.0
  */
 
 import UIKit
@@ -98,6 +98,20 @@ class ViewController: UIViewController
 }
 
 //UITableViewDelegate and UITableViewDataSource
+
+extension ViewController: UITableViewDelegate
+{
+    func tableView(_ tableView: UITableView, leadingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        let action = UIContextualAction(style: .normal, title: "Swiped Left!") { action, view, complete in
+           print ("Swiped Left")
+           
+        }
+        action.backgroundColor =  UIColor.blue
+        return UISwipeActionsConfiguration(actions: [action])
+    }
+}
+
+
 extension ViewController: UITableViewDataSource
 {
     //return the number of rows in a section
@@ -114,9 +128,12 @@ extension ViewController: UITableViewDataSource
         cell.contentView.isUserInteractionEnabled = false
         cell.taskItem = taskItems[indexPath.row]
        //on edit button click from a certain cell, call the editTaskDetails method
-        cell.editButton.addTarget(self, action: #selector(editTaskDetails),  for: .touchUpInside)
+        //cell.editButton.addTarget(self, action: #selector(editTaskDetails),  for: .touchUpInside)
         return cell
     }
+    
+    
+   
 }
 
 

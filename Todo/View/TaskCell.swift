@@ -5,12 +5,12 @@
 /* Created and Developed by
 Adriana Diaz Torres - 301157161
 Aurela Bala - 301279255
-Date Created: 23/11/2022
+Date Created: 01/12/2022
  Simple To Do List App. This version performs not only the User Interface of the APP, but also functionalities such as create a new taks, see all tasks, edit a task and delete a task.
  
  The TaskCell is the class for creating a custom cell.
  Includes methods and perfom actions when a switch changes the state.
-Version: 1.2.0
+Version: 1.3.0
 */
 
 import UIKit
@@ -97,15 +97,15 @@ class TaskCell: UITableViewCell
     }()
     
     //create the custom task edit button
-     let editButton: UIButton = {
-        let button = UIButton()
-        button.setImage(UIImage(systemName: "square.and.pencil"), for: .normal)
-        button.tintColor = UIColor(hue: 0.65, saturation: 0.57, brightness: 0.92, alpha: 1)
-        button.scalesLargeContentImage = true
-        button.imageView?.layer.transform = CATransform3DMakeScale(1.5, 1.5, 1.1)
-        button.addTarget(self, action: #selector(getTaskID), for: .touchUpInside)
-        return button
-    }()
+//     let editButton: UIButton = {
+//        let button = UIButton()
+//        button.setImage(UIImage(systemName: "square.and.pencil"), for: .normal)
+//        button.tintColor = UIColor(hue: 0.65, saturation: 0.57, brightness: 0.92, alpha: 1)
+//        button.scalesLargeContentImage = true
+//        button.imageView?.layer.transform = CATransform3DMakeScale(1.5, 1.5, 1.1)
+//        button.addTarget(self, action: #selector(getTaskID), for: .touchUpInside)
+//        return button
+//    }()
     
     //add the custom elements to the cell
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?)
@@ -123,8 +123,8 @@ class TaskCell: UITableViewCell
         addSubview(switchControl)
      switchControl.anchor(top: topAnchor, right: rightAnchor,  paddingTop: 7, paddingRight: 55)
         //add task edit button and the position for it
-        addSubview(editButton)
-     editButton.anchor(top: topAnchor, right: rightAnchor,  paddingTop: 10, paddingRight: 20)
+       // addSubview(editButton)
+    // editButton.anchor(top: topAnchor, right: rightAnchor,  paddingTop: 10, paddingRight: 20)
     }
     
     required init?(coder: NSCoder) {
