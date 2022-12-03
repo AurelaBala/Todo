@@ -5,12 +5,12 @@
 /* Created and Developed by
 Adriana Diaz Torres - 301157161
 Aurela Bala - 301279255
-Date Created: 23/11/2022
+Date Created: 01/12/2022
  Simple To Do List App. This version performs not only the User Interface of the APP, but also functionalities such as create a new taks, see all tasks, edit a task and delete a task.
 
 The TaskViewController is the create a new Task screen that includes the task title and a method for adding the new task into the Firebase Database
 Screen performs in both modes: portrait and landscape
-Version: 1.2.0
+Version: 1.3.0
 */
 
 import UIKit

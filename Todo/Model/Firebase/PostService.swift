@@ -5,12 +5,12 @@
 /* Created and Developed by
 Adriana Diaz Torres - 301157161
 Aurela Bala - 301279255
-Date Created: 23/11/2022
+Date Created: 01/12/2022
  Simple To Do List App. This version performs not only the User Interface of the APP, but also functionalities such as create a new taks, see all tasks, edit a task and delete a task.
 
  Through PostService we can fetch all the tasks that are stored in the Firebase and display them on the TableView cell
  Screen performs in both modes: portrait and landscape
- Version: 1.2.0
+ Version: 1.3.0
  */
 
 import UIKit
@@ -108,6 +108,15 @@ struct PostService
         ] as [String : Any]
         DB_REFERENCE.child("tasks").child(taskID).updateChildValues(data, withCompletionBlock: completion)
     }
+    
+    //update only the status method
+     func makeCompleted(taskID: String, isCompleted: Bool, completion: @escaping(Error?, DatabaseReference) -> Void)
+     {
+         let data = [
+          "isCompleted": isCompleted,
+         ] as [String : Any]
+         DB_REFERENCE.child("tasks").child(taskID).updateChildValues(data, withCompletionBlock: completion)
+     }
     
     //delete a task method
     func deleteTask(taskID: String, completion: @escaping(Error?, DatabaseReference) -> Void)
