@@ -41,7 +41,7 @@ class EditTaskViewController: UIViewController {
     public func getID(a: String)
     {
         EditTaskViewController.b = a
-        print(EditTaskViewController.b)
+        print("TASK ID is"+EditTaskViewController.b)
     }
     
     override func viewDidLoad()

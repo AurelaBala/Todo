@@ -109,6 +109,15 @@ struct PostService
         DB_REFERENCE.child("tasks").child(taskID).updateChildValues(data, withCompletionBlock: completion)
     }
     
+    //update only the status method
+     func makeCompleted(taskID: String, isCompleted: Bool, completion: @escaping(Error?, DatabaseReference) -> Void)
+     {
+         let data = [
+          "isCompleted": isCompleted,
+         ] as [String : Any]
+         DB_REFERENCE.child("tasks").child(taskID).updateChildValues(data, withCompletionBlock: completion)
+     }
+    
     //delete a task method
     func deleteTask(taskID: String, completion: @escaping(Error?, DatabaseReference) -> Void)
      {
